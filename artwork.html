@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/021b758c3a.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/img/logoId.png">
+    <script src="assets/js/navbar.js" type="text/javascript"></script>
+    <title>Arts.iD</title>
+</head>
+<body>
+  <navbar-component></navbar-component>
+
+   <!-- login -->
+   <div class="modal login fade modal-sm" id="login" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
+      <div class="modal-content rounded-0 px-2">
+        <div class="modal-header border-0 mb-0 pb-2">
+          <img src="assets/img/logoID.png">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-header border-0 mb-0 pb-2">
+          <h4 class="modal-title fw-bold pe-3 lh-sm" id="loginLabel">Log in to collect art by the world’s leading
+            artists</h4>
+        </div>
+        <div class="modal-body">
+          <form action="home.html" class="was-validated">
+            <p>Email</p>
+            <div class="input-group flex-nowrap mb-4">
+              <input type="email" id="email" name="email" required class="form-control fw-semibold opacity-75"
+                placeholder="Enter your email address" aria-label="Username" aria-describedby="addon-wrapping"
+                pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+[.]+[a-zA-Z]{2,10}$" autocomplete="off">
+            </div>
+            <p>Password</p>
+            <div class="input-group flex-nowrap mb-2">
+              <input type="password" id="password" name="password" required class="form-control fw-semibold opacity-75"
+                placeholder="Enter your password" aria-label="Username" aria-describedby="addon-wrapping"
+                pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$">
+              <input type="checkbox" onclick="myFunction()">
+            </div>
+            <div class="text-end mb-3">
+              <a data-bs-toggle="modal" href="#forget">Forgot Password?</a>
+            </div>
+            <div class="text-center mb-2">
+              <button type="submit" class="btn btn-dark rounded-pill" value="submit">Log In</button>
+            </div>
+          </form>
+          <div class="text-center fw-light">
+            <h5>or</h5>
+          </div>
+          <div class="text-center mb-2">
+            <a href="home.html">
+              <button type="button" class="btn btn-outline-dark rounded-pill fw-medium" value="submit">
+                <svg fill="currentColor" aria-hidden="true" viewBox="0 0 18 18" height="18px" width="18px"
+                  class="Icon-sc-1eovgys-0 jbCptF">
+                  <title>Google Icon</title>
+                  <path fill="#4285F4" fill-rule="evenodd"
+                    d="M16.759 9.194a9.82 9.82 0 00-.156-1.75H8.551v3.308h4.601a3.933 3.933 0 01-1.706 2.58v2.146h2.763c1.617-1.489 2.55-3.68 2.55-6.284z"
+                    clip-rule="evenodd"></path>
+                  <path fill="#34A853" fill-rule="evenodd"
+                    d="M8.55 17.55c2.31 0 4.245-.765 5.66-2.07l-2.764-2.146c-.765.513-1.745.816-2.895.816-2.227 0-4.112-1.504-4.784-3.525H.91v2.215a8.547 8.547 0 007.64 4.71z"
+                    clip-rule="evenodd"></path>
+                  <path fill="#FBBC05" fill-rule="evenodd"
+                    d="M3.766 10.624a5.14 5.14 0 01-.268-1.625c0-.563.097-1.111.268-1.624V5.16H.909A8.547 8.547 0 000 9c0 1.38.33 2.685.91 3.84l2.856-2.216z"
+                    clip-rule="evenodd"></path>
+                  <path fill="#EA4335" fill-rule="evenodd"
+                    d="M8.55 3.85c1.256 0 2.383.431 3.27 1.278l2.451-2.452C12.791 1.296 10.855.45 8.552.45A8.547 8.547 0 00.91 5.16l2.856 2.216C4.439 5.354 6.324 3.85 8.55 3.85z"
+                    clip-rule="evenodd"></path>
+                  </g>
+                </svg>
+                Continue with Google</button>
+            </a>
+          </div>
+          <div class="text-center mb-2">
+            <a href="home.html">
+              <button type="button" class="btn btn-outline-dark rounded-pill fw-medium" value="submit">
+                <svg fill="currentColor" aria-hidden="true" viewBox="0 0 19 19" height="19px" width="19px"
+                  class="Icon-sc-1eovgys-0 jbCptF">
+                  <title>Apple Icon</title>
+                  <path fill="currentColor" fill-rule="evenodd"
+                    d="M9.152 3.208c-.556.692-1.49 1.211-2.235 1.211-.084 0-.168-.01-.22-.021a1.528 1.528 0 01-.032-.303c0-.887.43-1.753.902-2.304C8.165 1.066 9.163.525 9.992.492c.02.098.031.217.031.336 0 .876-.367 1.752-.871 2.38zm-3.65 13.977c-.374.166-.728.323-1.21.323-1.028 0-1.742-.974-2.56-2.164C.777 13.938 0 11.764 0 9.708c0-3.31 2.089-5.063 4.146-5.063.6 0 1.149.227 1.637.429.39.161.742.307 1.05.307.267 0 .6-.136.988-.294.542-.22 1.191-.485 1.919-.485.462 0 2.151.043 3.264 1.687l-.04.028c-.274.186-1.734 1.18-1.734 3.218 0 2.52 2.13 3.418 2.204 3.44l-.013.04c-.07.224-.404 1.29-1.12 2.372-.704 1.039-1.449 2.099-2.561 2.099-.549 0-.898-.16-1.259-.324-.385-.176-.783-.358-1.449-.358-.67 0-1.112.196-1.53.381z"
+                    clip-rule="evenodd"></path>
+                  </g>
+                </svg>
+                Continue with Apple</button>
+            </a>
+          </div>
+          <div class="text-center mb-2">
+            <a href="home.html">
+              <button type="button" class="btn btn-outline-dark rounded-pill fw-medium" value="submit">
+                <i class="fa-brands fa-facebook fs-5"></i>
+                Continue with Facebook</button>
+            </a>
+          </div>
+          <div class="text-center mt-3">
+            <h5>Don’t have an account? <a data-bs-toggle="modal" href="#register">Sign Up</a></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- recovery -->
+  <div class="modal fade modal-sm" id="forget" tabindex="-1" aria-labelledby="emailLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
+      <div class="modal-content rounded-0 px-2">
+        <div class="modal-header border-0 mb-0 pb-2">
+          <img src="assets/img/logoID.png">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-header border-0 mb-0 pb-2">
+          <h4 class="modal-title fw-bold pe-3 lh-sm" id="emailLabel">Recovery Email</h4>
+        </div>
+        <div class="modal-body">
+          <form action="#login" class="was-validated">
+            <div class="input-group flex-nowrap mb-4">
+              <input type="text" id="email" name="email" required class="form-control fw-semibold opacity-75"
+                pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+[.]+[a-zA-Z]{2,10}$" autocomplete="off">
+            </div>
+            <div class="text-center mb-2">
+                <button type="submit" class="btn btn-dark rounded-pill" value="submit">Reset Password</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- register -->
+  <div class="modal login fade modal-sm" id="register" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
+      <div class="modal-content rounded-0 px-2">
+        <div class="modal-header border-0 mb-0 pb-2">
+          <img src="assets/img/logoID.png">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-header border-0 mb-0 pb-2">
+          <h4 class="modal-title fw-bold pe-3 lh-sm" id="loginLabel">Log in to collect art by the world’s leading
+            artists</h4>
+        </div>
+        <div class="modal-body">
+          <form action="home.html" class="was-validated">
+            <p>Name</p>
+            <div class="input-group flex-nowrap mb-4">
+              <input type="text" required class="form-control fw-semibold opacity-75" placeholder="Enter your full name "
+               aria-label="Username" aria-describedby="addon-wrapping" autocomplete="off">
+            </div>
+            <p>Email</p>
+            <div class="input-group flex-nowrap mb-4">
+              <input type="email" id="email" name="email" required class="form-control fw-semibold opacity-75"
+                placeholder="Enter your email address" aria-label="Username" aria-describedby="addon-wrapping"
+                pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+[.]+[a-zA-Z]{2,10}$" autocomplete="off">
+            </div>
+            <p>Password</p>
+            <div class="input-group flex-nowrap mb-2">
+              <input type="password" id="password" name="password" required class="form-control fw-semibold opacity-75"
+                placeholder="Enter your password" aria-label="Username" aria-describedby="addon-wrapping"
+                pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$">
+            </div>
+            <div class="mb-3 text-secondary">
+              <p>Password must be at least 8 characters and include a lowercase letter, uppercase letter, and digit.</p>
+            </div>
+            <div>
+              <p>Location</p>
+              <select required class="form-select mb-4">
+                <option selected>Select</option>
+                <option value="1">Indonesia</option>
+                <option value="2">US</option>
+                <option value="3">UK</option>
+                <option value="4">South Korea</option>
+                <option value="5">Swedia</option>
+              </select>
+            </div>
+            <div class="text-center mb-2">
+              <button type="submit" class="btn btn-dark rounded-pill" value="submit">Sign Up</button>
+            </div>
+          </form>
+
+          <div class="text-center fw-light">
+            <h5>or</h5>
+          </div>
+          <div class="text-center mb-2">
+            <button type="button" class="btn btn-outline-dark rounded-pill fw-medium" value="submit">
+              <svg fill="currentColor" aria-hidden="true" viewBox="0 0 18 18" height="18px" width="18px"
+                class="Icon-sc-1eovgys-0 jbCptF">
+                <title>Google Icon</title>
+                <path fill="#4285F4" fill-rule="evenodd"
+                  d="M16.759 9.194a9.82 9.82 0 00-.156-1.75H8.551v3.308h4.601a3.933 3.933 0 01-1.706 2.58v2.146h2.763c1.617-1.489 2.55-3.68 2.55-6.284z"
+                  clip-rule="evenodd"></path>
+                <path fill="#34A853" fill-rule="evenodd"
+                  d="M8.55 17.55c2.31 0 4.245-.765 5.66-2.07l-2.764-2.146c-.765.513-1.745.816-2.895.816-2.227 0-4.112-1.504-4.784-3.525H.91v2.215a8.547 8.547 0 007.64 4.71z"
+                  clip-rule="evenodd"></path>
+                <path fill="#FBBC05" fill-rule="evenodd"
+                  d="M3.766 10.624a5.14 5.14 0 01-.268-1.625c0-.563.097-1.111.268-1.624V5.16H.909A8.547 8.547 0 000 9c0 1.38.33 2.685.91 3.84l2.856-2.216z"
+                  clip-rule="evenodd"></path>
+                <path fill="#EA4335" fill-rule="evenodd"
+                  d="M8.55 3.85c1.256 0 2.383.431 3.27 1.278l2.451-2.452C12.791 1.296 10.855.45 8.552.45A8.547 8.547 0 00.91 5.16l2.856 2.216C4.439 5.354 6.324 3.85 8.55 3.85z"
+                  clip-rule="evenodd"></path>
+                </g>
+              </svg>
+              Continue with Google</button>
+          </div>
+          <div class="text-center mb-2">
+            <button type="button" class="btn btn-outline-dark rounded-pill fw-medium" value="submit">
+              <svg fill="currentColor" aria-hidden="true" viewBox="0 0 19 19" height="19px" width="19px"
+                class="Icon-sc-1eovgys-0 jbCptF">
+                <title>Apple Icon</title>
+                <path fill="currentColor" fill-rule="evenodd"
+                  d="M9.152 3.208c-.556.692-1.49 1.211-2.235 1.211-.084 0-.168-.01-.22-.021a1.528 1.528 0 01-.032-.303c0-.887.43-1.753.902-2.304C8.165 1.066 9.163.525 9.992.492c.02.098.031.217.031.336 0 .876-.367 1.752-.871 2.38zm-3.65 13.977c-.374.166-.728.323-1.21.323-1.028 0-1.742-.974-2.56-2.164C.777 13.938 0 11.764 0 9.708c0-3.31 2.089-5.063 4.146-5.063.6 0 1.149.227 1.637.429.39.161.742.307 1.05.307.267 0 .6-.136.988-.294.542-.22 1.191-.485 1.919-.485.462 0 2.151.043 3.264 1.687l-.04.028c-.274.186-1.734 1.18-1.734 3.218 0 2.52 2.13 3.418 2.204 3.44l-.013.04c-.07.224-.404 1.29-1.12 2.372-.704 1.039-1.449 2.099-2.561 2.099-.549 0-.898-.16-1.259-.324-.385-.176-.783-.358-1.449-.358-.67 0-1.112.196-1.53.381z"
+                  clip-rule="evenodd"></path>
+                </g>
+              </svg>
+              Continue with Apple</button>
+          </div>
+          <div class="text-center mb-2">
+            <button type="button" class="btn btn-outline-dark rounded-pill fw-medium" value="submit">
+              <i class="fa-brands fa-facebook fs-5"></i>
+              Continue with Facebook</button>
+          </div>
+          <div class="text-center mt-3">
+            <h5>Already have an account? <a data-bs-toggle="modal" href="#login">Sign In</a></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header container text-black">
+    <h1 class="fw-semibold mb-4">Collect art and design online</h1>
+    <hr>
+    <div class="collect d-flex gap-4 mt-4 justify-content-center">
+      <div class="card border-0" style="width: 18rem;">
+        <a href="street-collection.html">
+          <img src="assets/img/street art.png" class="card-img-top rounded-0" alt="...">
+        <div class="card-body ps-0">
+          <p class="card-text">Street Art</p>
+        </div>
+        </a>
+      </div>
+      <div class="card border-0" style="width: 18rem;">
+        <a href="#">
+          <img src="assets/img/post-war.png" class="card-img-top rounded-0" alt="...">
+        <div class="card-body ps-0">
+          <p class="card-text">Post-War Post</p>
+        </div>
+        </a>
+      </div>
+      <div class="card border-0" style="width: 18rem;">
+        <a href="#">
+          <img src="assets/img/photography.png" class="card-img-top rounded-0" alt="...">
+        <div class="card-body ps-0">
+          <p class="card-text">Photography</p>
+        </div>
+        </a>
+      </div>
+      <div class="card border-0" style="width: 18rem;">
+        <a href="#">
+          <img src="assets/img/20th.png" class="card-img-top rounded-0" alt="...">
+          <div class="card-body ps-0">
+            <p class="card-text">Pre-20th Century</p>
+          </div>
+        </a>
+      </div>
+      <div class="card border-0" style="width: 18rem;">
+        <a href="#">
+          <img src="assets/img/modern.png" class="card-img-top rounded-0" alt="...">
+          <div class="card-body ps-0">
+            <p class="card-text">Impressionist and Modern Art</p>
+          </div>
+        </a>
+      </div>
+      <div class="card border-0" style="width: 18rem;">
+        <a href="#">
+          <img src="assets/img/contemporary.png" class="card-img-top rounded-0" alt="...">
+          <div class="card-body ps-0">
+            <p class="card-text">Contemporary Art</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="arts container mt-3">
+    <p class="fw-bold text-black mb-5">6,644 Artworks:</p>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4" data-masonry='{"percentPosition": true }'>
+        <div class="col">
+          <div class="card border-0">
+            <a href="detail-artwork.html">
+              <img src="assets/img/no art.png" class="card-img-top rounded-0" alt="...">
+              <div class="card-body ps-0">
+                <h6 class="card-text fw-bold mb-1">Javier Calleja</h6>
+                <h6 class="card-text fw-semibold fst-italic text-body-secondary mb-0">No Art Today, 2015</h6>
+                <p class="card-text mb-0"><small class="text-body-secondary">Galerie Zink</small></p>
+                <strong class="card-text"><small>Rp 20.000.000</small></strong>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <a href="#">
+              <img src="assets/img/damien1.png" class="card-img-top rounded-0" alt="...">
+              <div class="card-body ps-0">
+                <h6 class="card-text fw-bold mb-1">Damien Hirst</h6>
+                <h6 class="card-text fw-semibold fst-italic text-body-secondary mb-0">Spinning Wheel (Unique), 2002</h6>
+                <p class="card-text mb-0"><small class="text-body-secondary">DTR Modern Galleries</small></p>
+                <strong class="card-text"><small>Rp 20.000.000</small></strong>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <a href="#">
+              <img src="assets/img/salvador.png" class="card-img-top rounded-0" alt="...">
+              <div class="card-body ps-0">
+                <h6 class="card-text fw-bold mb-1">Salvador Dali</h6>
+                <h6 class="card-text fw-semibold fst-italic text-body-secondary mb-0">Crazy, Crazy, Crazy Minerva, 1971</h6>
+                <p class="card-text mb-0"><small class="text-body-secondary">DTR Modern Galleries</small></p>
+                <strong class="card-text"><small>Rp 20.000.000</small></strong>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <a href="#">
+              <img src="assets/img/damien.png" class="card-img-top rounded-0" alt="...">
+              <div class="card-body ps-0">
+                <h6 class="card-text fw-bold mb-1">Damien Hirst</h6>
+                <h6 class="card-text fw-semibold fst-italic text-body-secondary mb-0">The Currency #3270. I've Been Lifted, 2016</h6>
+                <p class="card-text mb-0"><small class="text-body-secondary">TGB Contemporary</small></p>
+                <strong class="card-text"><small>Rp 20.000.000</small></strong>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <a href="#">
+              <img src="assets/img/the family.png" class="card-img-top rounded-0" alt="...">
+              <div class="card-body ps-0">
+                <h6 class="card-text fw-bold mb-1">Laurence Stephen Lowry</h6>
+                <h6 class="card-text fw-semibold fst-italic text-body-secondary mb-0">The Family, 1970</h6>
+                <p class="card-text mb-0"><small class="text-body-secondary">Hidden</small></p>
+                <strong class="card-text"><small>Rp 20.000.000</small></strong>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <a href="#">
+              <img src="assets/img/mainhard.png" class="card-img-top rounded-0" alt="...">
+              <div class="card-body ps-0">
+                <h6 class="card-text fw-bold mb-1">Thai Mainhard</h6>
+                <h6 class="card-text fw-semibold fst-italic text-body-secondary mb-0">Work On Paper VII, 2023</h6>
+                <p class="card-text mb-0"><small class="text-body-secondary">Shazar Gallery</small></p>
+                <strong class="card-text"><small>Rp 20.000.000</small></strong>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <a href="#">
+              <img src="assets/img/cake.png" class="card-img-top rounded-0" alt="...">
+              <div class="card-body ps-0">
+                <h6 class="card-text fw-bold mb-1">RETNA</h6>
+                <h6 class="card-text fw-semibold fst-italic text-body-secondary mb-0">Stacked Cake: Black on Pale Pink and Grey, 2015</h6>
+                <p class="card-text mb-0"><small class="text-body-secondary">ARC Fine Art LLC</small></p>
+                <strong class="card-text"><small>Rp 20.000.000</small></strong>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <a href="#">
+              <img src="assets/img/retna.png" class="card-img-top rounded-0" alt="...">
+              <div class="card-body ps-0">
+                <h6 class="card-text fw-bold mb-1">RETNA</h6>
+                <h6 class="card-text fw-semibold fst-italic text-body-secondary mb-0">Untitled, 2014</h6>
+                <p class="card-text mb-0"><small class="text-body-secondary">HG Contemporary</small></p>
+                <strong class="card-text"><small>Rp 20.000.000</small></strong>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <a href="#">
+              <img src="assets/img/tiger shark.png" class="card-img-top rounded-0" alt="...">
+              <div class="card-body">
+                <h6 class="card-text fw-bold mb-1">Matija Bobicic</h6>
+                <h6 class="card-text fw-semibold fst-italic text-body-secondary mb-0">Tiger Shark, 2022</h6>
+                <p class="card-text mb-0"><small class="text-body-secondary">Allouche Gallery</small></p>
+                <strong class="card-text"><small>Rp 20.000.000</small></strong>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <a href="#">
+              <img src="assets/img/mainhard1.png" class="card-img-top rounded-0" alt="...">
+              <div class="card-body">
+                <h6 class="card-text fw-bold mb-1">Thai Mainhard</h6>
+                <h6 class="card-text fw-semibold fst-italic text-body-secondary mb-0">Bend Not Break, 2022</h6>
+                <p class="card-text mb-0"><small class="text-body-secondary">Shazar Gallery</small></p>
+                <strong class="card-text"><small>Rp 20.000.000</small></strong>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <a href="#">
+              <img src="assets/img/matija.png" class="card-img-top rounded-0" alt="...">
+              <div class="card-body">
+                <h6 class="card-text fw-bold mb-1">Matija Bobicic</h6>
+                <h6 class="card-text fw-semibold fst-italic text-body-secondary mb-0">Kitty, 2022</h6>
+                <p class="card-text mb-0"><small class="text-body-secondary">Allouche Gallery</small></p>
+                <strong class="card-text"><small>Rp 20.000.000</small></strong>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0">
+            <a href="#">
+              <img src="assets/img/matija1.png" class="card-img-top rounded-0" alt="...">
+              <div class="card-body">
+                <h6 class="card-text fw-bold mb-1">Matija Bobicic</h6>
+                <h6 class="card-text fw-semibold fst-italic text-body-secondary mb-0">Duality, 2022</h6>
+                <p class="card-text mb-0"><small class="text-body-secondary">Allouche Gallery</small></p>
+                <strong class="card-text"><small>Rp 20.000.000</small></strong>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="footer bg-black">
+    <div class="container text-white justify-content-center">
+      <div class="footer-links">
+        <div class="footer-link-wrap">
+          <div class="footer-link-items">
+            <h2>Biography Artists</h2>
+            <a href="detail-artist.html">Raden Saleh</a> 
+            <a href="#">John Martono</a>
+            <a href="#">Sindudarsono S</a> 
+            <a href="#">Entang Wiharso</a>
+          </div>
+          <div class="footer-link-items">
+            <h2>Social Media</h2>
+            <a href="https://www.instagram.com/">Instagram</a> <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+            <a href="https://www.youtube.com/">Youtube</a> <a href="https://www.twitter.com/" target="_blank">Twitter</a>
+          </div>
+          <div class="footer-link-items">
+            <div class="footer-contact">
+              <h2>Contact Us</h2>
+              <a href="#">Contact</a>
+              <br>
+              <a href="https://gmail.google.com">Our Email</a>
+            </div>
+          </div>
+          <div class="footer-link-items">
+            <div class="footer-content ps-5">
+              <h1 class="mb-3">the gate to <span> Arts</span> discovery.</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-black p-2 text-center">
+    <p class="text-white">© 2023, Arts.ID. All rights reserved</p>
+  </div>
+
+  <script src="assets/js/script.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
